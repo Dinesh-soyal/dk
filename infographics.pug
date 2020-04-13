@@ -1,0 +1,40 @@
+- var data = [
+- 	{
+- 		slist: ['329, 100%, 70%', '337, 99%, 58%'], 
+- 		icon: '🍓', 
+- 		title: 'gingerbread', 
+- 		ptext: 'Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin.'
+- 	}, 
+- 	{
+- 		slist: ['48, 99%, 58%', '33, 94%, 55%'], 
+- 		icon: '🍋', 
+- 		title: 'brownie', 
+- 		ptext: 'Cake cookie lemon muffin plum. Orange topping macaroon chocolate.'
+- 	}, 
+- 	{
+- 		slist: ['272, 46%, 54%', '273, 78%, 48%'], 
+- 		icon: '🍇', 
+- 		title: 'ice cream', 
+- 		ptext: 'Cake muffin donut chocolate cake jelly sesame wafer tart pie muffin.'
+- 	}, 
+- 	{
+- 		slist: ['174, 84%, 34%', '193, 99%, 27%'], 
+- 		icon: '🍐', 
+- 		title: 'lava cake', 
+- 		ptext: 'Cake cookie lemon muffin plum. Orange topping macaroon chocolate.'
+- 	}
+- ];
+- var n = data.length;
+- var comp = ['hue', 'sat', 'lum'];
+
+- for(var i = 0; i < n; i++)
+	- let m = data[i].slist.length;
+	- let s = [];
+	- for(var j = 0; j < m; j++)
+		- var c = data[i].slist[j].split(', ');
+		- for(var k = 0; k < 3; k++)
+			- s.push(`--${comp[k]}${j}: ${c[k]}`)
+	article(data-icon=`${data[i].icon}` style=`${s.join('; ')}; --idx: ${i}`)
+		h3 option
+		h4 #{data[i].title}
+		p #{data[i].ptext}
