@@ -1,0 +1,266 @@
+@import 'compass/css3';
+
+$lum0: 98%;
+$lum1: 83%;
+$sat: 9%;
+$lin-h: 1.25;
+$hd4-fs: 2.25rem;
+
+// WIDE CASE
+// rows
+$row-1-wide: $hd4-fs*$lin-h;
+$row-2-wide: 3.75rem;
+$row-3-wide: 0;
+// columns
+$col-a-wide: 11.5rem; // option numbering
+$col-b-wide: 14rem; // heading & text
+$col-c-wide: 5rem; // icon
+$col-d-wide: .375rem; // separator
+$col-1-wide: calc(var(--q)*#{$col-a-wide} + var(--p)*#{$col-b-wide});
+$col-2-wide: calc(var(--q)*#{$col-c-wide} + var(--p)*#{$col-d-wide});
+$col-3-wide: calc(var(--q)*#{$col-d-wide} + var(--p)*#{$col-c-wide});
+$col-4-wide: calc(var(--q)*#{$col-b-wide} + var(--p)*#{$col-a-wide});
+
+$art-g-wide: 1.5rem;
+$art-b-wide: .1875rem;
+$art-p-wide: 2.25rem;
+$art-w-wide: $col-a-wide + $col-b-wide + $col-c-wide + $col-d-wide + 
+						 4*$art-g-wide + 2*$art-b-wide;
+$art-h-wide: $row-1-wide + 3*$lin-h*1rem + 
+						 2*$art-p-wide + 2*$art-b-wide;
+$art-r-wide: 9px;
+$art-gb-wide: 1rem;
+$art-gr-wide: (pow(.5*$art-h-wide, 2) + pow($art-gb-wide, 2))/$art-gb-wide*1rem;
+$art-gd-wide: $art-gr-wide - $col-a-wide - $art-b-wide;
+$art-gx-wide: calc(var(--p)*100% - var(--s)*#{$art-gd-wide});
+
+$hd3-mv-wide: -($art-p-wide + $art-b-wide);
+$hd3-mr-wide: calc(var(--p)*#{-$art-b-wide});
+$hd3-ml-wide: calc(var(--q)*#{-$art-b-wide});
+$hd3-pv-wide: $art-p-wide + $art-b-wide;
+$hd3-fs-wide: .25*($row-1-wide + 3*$lin-h*1rem);
+$hd3-lh-wide: 1;
+$num-fs-wide: 3em;
+
+$ico-fs-wide: $col-c-wide/$lin-h;
+
+$art-gf: $art-gb-wide/$art-h-wide;
+
+// NORM CASE
+$row-1-norm: 15vw;
+$row-2-norm: $hd4-fs*$lin-h;
+$col-2-norm: $row-2-norm;
+$col-1-norm: calc(100% - #{$col-2-norm});
+
+$art-p-norm: 2vw;
+$art-gb-norm: $art-gf*100vw;
+$art-gr-norm: (pow(.5*100vw, 2) + pow($art-gb-norm, 2))/$art-gb-norm*1vw;
+$art-gd-norm: $art-gr-norm - $row-1-norm - $art-p-norm;
+$art-gy-norm: -$art-gd-norm;
+
+$hd3-m-norm: -$art-p-norm;
+$hd3-lh-norm: 1.75;
+$hd3-fs-norm: ($row-1-norm - .375*$art-gb-norm)/$hd3-lh-norm;
+$num-fs-norm: 1em;
+
+$ico-fs-norm: $row-2-norm/$lin-h;
+
+// UNIF CASE
+$row-1: calc(var(--i)*#{$row-1-wide} + var(--j)*#{$row-1-norm});
+$row-2: calc(var(--i)*#{$row-2-wide} + var(--j)*#{$row-2-norm});
+$row-3: calc(var(--j)*3.75rem);
+$col-1: calc(var(--i)*#{$col-1-wide} + var(--j)*#{$col-1-norm});
+$col-2: calc(var(--i)*#{$col-2-wide} + var(--j)*#{$col-2-norm});
+$col-3: calc(var(--i)*#{$col-3-wide});
+$col-4: calc(var(--i)*#{$col-4-wide});
+
+$art-g: calc(var(--i)*#{$art-g-wide});
+$art-b: calc(var(--i)*#{$art-b-wide});
+$art-pv: calc(var(--i)*#{$art-p-wide} + var(--j)*#{$art-p-norm});
+$art-pr: calc(var(--i)*var(--q)*#{$art-g-wide} + var(--j)*#{$art-p-norm});
+$art-pl: calc(var(--i)*var(--p)*#{$art-g-wide} + var(--j)*#{$art-p-norm});
+$art-r: calc(var(--i)*#{$art-r-wide});
+$art-gr: calc(var(--i)*#{$art-gr-wide} + var(--j)*#{$art-gr-norm});
+$art-gd: calc(var(--i)*#{$art-gd-wide} + var(--j)*#{$art-gd-norm});
+$art-gx: calc(var(--i)*#{$art-gx-wide} + var(--j)*50%);
+$art-gy: calc(var(--i)*50% + var(--j)*#{$art-gy-norm});
+
+$hd3-mt: calc(var(--i)*#{$hd3-mv-wide} + var(--j)*#{$hd3-m-norm});
+$hd3-mr: calc(var(--i)*#{$hd3-mr-wide} + var(--j)*#{$hd3-m-norm});
+$hd3-mb: calc(var(--i)*#{$hd3-mv-wide});
+$hd3-ml: calc(var(--i)*#{$hd3-ml-wide} + var(--j)*#{$hd3-m-norm});
+$hd3-pv: calc(var(--i)*#{$hd3-pv-wide});
+$hd3-fs: calc(var(--i)*#{$hd3-fs-wide} + var(--j)*#{$hd3-fs-norm});
+$hd3-lh: calc(var(--i)*#{$hd3-lh-wide} + var(--j)*#{$hd3-lh-norm});
+$num-fs: calc(var(--i)*#{$num-fs-wide} + var(--j)*#{$num-fs-norm});
+$ico-fs: calc(var(--i)*#{$ico-fs-wide} + var(--j)*#{$ico-fs-norm});
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	--i: var(--wide, 1);
+	--j: calc(1 - var(--i));
+	background: #818286;
+	$c: rgba(#fff, .8);
+	background: 
+		linear-gradient($c, $c), 
+		url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/2017/kreator_rockharz_july_2018.jpg) 
+			50%/ cover;
+	font: 400 1em/ #{$lin-h} 
+		koho, trebuchet ms, verdana, century gothic, arial, sans-serif;
+	
+	@media (max-width: $art-w-wide) { --wide: 0 }
+	
+	@media (max-width: 250px) { font-size: .75em }
+}
+
+article {
+	--p: var(--parity, 0);
+	--q: calc(1 - var(--p));
+	--s: calc(1 - 2*var(--p));
+	display: grid;
+	grid-template: 
+		#{$row-1} #{$row-2} #{$row-3}/ 
+		#{$col-1} #{$col-2} #{$col-3} #{$col-4};
+	grid-gap: 0 $art-g;
+	margin: .5em auto;
+	border: solid $art-b transparent;
+	padding: $art-pv $art-pr $art-pv $art-pl;
+	max-width: $art-w-wide;
+	border-radius: $art-r;
+	background: 
+		Linear-gradient(calc(var(--s)*90deg), 
+				HSL(var(--hue0), 
+					calc(var(--p)*var(--sat0) + var(--q)*#{$sat}), 
+						calc(var(--p)*var(--lum0) + var(--q)*#{$lum0})) calc(var(--i)*#{$col-a-wide}), 
+				HSL(var(--hue1), 
+						calc(var(--p)*var(--sat1) + var(--q)*#{$sat}), 
+						calc(var(--p)*var(--lum1) + var(--q)*#{$lum1}))) padding-box, 
+		Linear-gradient(calc(var(--s)*90deg), 
+				HSL(var(--hue1), 
+						calc(var(--p)*var(--sat1) + var(--q)*#{$sat}), 
+						calc(var(--p)*var(--lum1) + var(--q)*#{$lum1})) $col-a-wide + $art-b-wide, 
+				HSL(var(--hue0), 
+						calc(var(--p)*var(--sat0) + var(--q)*#{$sat}), 
+						calc(var(--p)*var(--lum0) + var(--q)*#{$lum0}))) border-box;
+	color: HSL(var(--hue1), 
+		calc(var(--q)*var(--sat1) + var(--p)*#{$sat}), 
+						 calc(var(--q)*var(--lum1) + var(--p)*#{$lum0}));
+	counter-increment: idx;
+	
+	&:before {
+		grid-column: 
+			/* starts on 3rd col for odd items, 2nd for even in wide case  */
+			calc((3*var(--q) + 2*var(--p)))/ 
+			/* always spans just 1 col */
+			span 1;
+		grid-row: 
+			/* starts on 1st row in wide case */
+			1/ 
+			/* spans all 3 rows in wide case */
+			span 3;
+		width: calc(var(--i)*#{$col-d-wide});
+		border-radius: $col-d-wide;
+		box-shadow: inset 2px 0 5px rgba(#000, .35), 
+			inset -1px 0 3px rgba(#fff, .25), 
+			1px 0 1px rgba(#fff, .5);
+		background: HSL(var(--hue1), var(--sat1), var(--lum1));
+		content: ''
+	}
+	
+	&:after {
+		grid-column: 
+			/* starts on 2nd col for odd items, 3rd for even in wide case  */
+			calc(var(--i)*(2*var(--q) + 3*var(--p)) + 2*var(--j))/ 
+			/* always spans just 1 col */
+			span 1;
+		grid-row: 
+			/* starts on 1st row in wide case, 2nd for norm */
+			calc(var(--i) + 2*var(--j))/ 
+			/* spans all 3 rows in wide case, just 1 in narrow case */
+			span calc(3*var(--i) + var(--j));
+		place-self: center;
+		font-size: $ico-fs;
+		filter: Grayscale(var(--p)) 
+						Brightness(calc(var(--q) + 1.25*var(--p)));
+		content: attr(data-icon)
+	}
+	
+	&:nth-child(2n) { --parity: 1 }
+}
+
+h3 {
+	display: grid;
+	grid-template: 
+		repeat(calc(1 + 3*var(--i)), 1fr)/ 
+		repeat(calc(1 + 2*var(--j)), 1fr);
+	place-items: center;
+	grid-column: 
+		/* starts on 1st col for odd items, 4th for even in wide case  */
+		calc(var(--i)*(var(--q) + 4*var(--p)) + var(--j))/ 
+		/* spans just 1 col in wide case, all non-zero ones in normal */
+		span calc(var(--i) + 2*var(--j));
+	grid-row: 
+		/* always starts on 1st row */
+		1/ 
+		/* spans all 3 rows in wide case, just 1 in narrow case */
+		span calc(3*var(--i) + var(--j));
+	margin: $hd3-mt $hd3-mr $hd3-mb $hd3-ml;
+	padding: $hd3-pv 0;
+	border-radius: inherit;
+	background: 
+		//linear-gradient(pink, pink) content-box, 
+		Radial-gradient(circle at $art-gx $art-gy, 
+				HSL(var(--hue0), 
+					calc(var(--q)*var(--sat0) + var(--p)*#{$sat}), 
+					calc(var(--q)*var(--lum1) + var(--p)*#{$lum0})) $art-gd, 
+				HSL(var(--hue1), 
+					calc(var(--q)*var(--sat1) + var(--p)*#{$sat}), 
+					calc(var(--q)*var(--lum1) + var(--p)*#{$lum1})) $art-gr);
+	color: HSL(var(--hue1), var(--sat1), calc(var(--p)*var(--lum1) + var(--q)*#{$lum0}));
+	font-size: $hd3-fs;
+	font-weight: 600;
+	line-height: $hd3-lh;
+	text-align: center;
+	text-transform: uppercase;
+	clip-path: circle($art-gr at $art-gx $art-gy);
+	
+	&:before {
+		grid-row: 1/ span calc(1 + var(--j));
+		font-size: $num-fs;
+		content: counter(idx, decimal-leading-zero)
+	}
+}
+
+h4 {
+	grid-column: 
+		/* starts on 4th col for odd items, 1st for even in wide case  */
+		calc(var(--i)*(4*var(--q) + var(--p)) + var(--j))/ 
+		/* always spans 1 col */
+		span 1;
+	grid-row: 
+		calc(var(--i) + 2*var(--j))/ 
+		/* always spans 1 row */
+		span 1;
+	//background: rgba(red, .2);
+	font-size: $hd4-fs;
+	font-weight: 500;
+	text-transform: capitalize;
+}
+
+p {
+	grid-column: 
+		/* starts on 4th col for odd items, 1st for even in wide case  */
+		calc(var(--i)*(4*var(--q) + var(--p)) + var(--j))/ 
+		/* spans 1 col in the wide case and 2 in the norm case */
+		span calc(var(--i) + 2*var(--j));
+	grid-row: 
+		calc(2*var(--i) + 3*var(--j))/ 
+		/* always spans 1 row */
+		span 1;
+	//background: rgba(purple, .2);
+}
