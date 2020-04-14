@@ -44,5 +44,136 @@
     </div>
   </div>
 </div>
+      
+      <style>@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+ body {
+	 font-family: Montserrat, sans-serif;
+}
+ @media (min-width: 768px) {
+	 body {
+		 height: 100vh;
+	}
+}
+ 
+ .container {
+	 display: flex;
+	 overflow: hidden;
+}
+ @media (max-width: 767px) {
+	 .container {
+		 flex-wrap: wrap;
+	}
+}
+ .wrapper {
+	 flex: 1;
+	 display: flex;
+	 flex-direction: column;
+	 min-width: 200px;
+	 margin: 10px;
+	 padding: 20px;
+	 padding-top: 1px;
+	 position: relative;
+	 overflow: hidden;
+}
+ @media (max-width: 767px) {
+	 .wrapper {
+		 flex: 0 0 100%;
+		 margin-bottom: 35px;
+	}
+}
+ .wrapper .circle {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 box-sizing: border-box;
+	 width: 10rem;
+	 height: 10rem;
+	 border-radius: 50%;
+	 background-color: #000;
+	 position: relative;
+	 margin: auto;
+	 margin-right: 2%;
+	 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+ @media (max-width: 767px) {
+	 .wrapper .circle {
+		 margin-right: 12%;
+	}
+}
+ .wrapper .circle:after {
+	 content: '';
+	 position: absolute;
+	 width: 10rem;
+	 height: 12.5rem;
+	 background-color: #000;
+	 border-radius: 50%;
+	 top: 2px;
+	 left: 4px;
+	 z-index: -2;
+	 transform: rotate(-25deg);
+	 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+ .wrapper:nth-child(1) .circle {
+	 background-image: linear-gradient(90deg, #f6671f, #c01b1c);
+}
+ .wrapper:nth-child(1) .circle:after {
+	 background-image: linear-gradient(90deg, #f6671f, #c01b1c);
+}
+ .wrapper:nth-child(1) .circle .inner-circle {
+	 color: #c01b1c;
+}
+ .wrapper:nth-child(2) .circle {
+	 background-image: linear-gradient(90deg, #fec22f, #ea9826);
+}
+ .wrapper:nth-child(2) .circle:after {
+	 background-image: linear-gradient(90deg, #fec22f, #ea9826);
+}
+ .wrapper:nth-child(2) .circle .inner-circle {
+	 color: #ea9826;
+}
+ .wrapper:nth-child(3) .circle {
+	 background-image: linear-gradient(90deg, #6fc6a9, #058ba9);
+}
+ .wrapper:nth-child(3) .circle:after {
+	 background-image: linear-gradient(90deg, #6fc6a9, #058ba9);
+}
+ .wrapper:nth-child(3) .circle .inner-circle {
+	 color: #058ba9;
+}
+ .wrapper .inner-circle {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 font-size: 45px;
+	 width: 6.25rem;
+	 height: 6.25rem;
+	 box-sizing: border-box;
+	 border-radius: 50%;
+	 background-color: #fff;
+	 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+	 transition: all 0.3s ease-in-out;
+}
+ .wrapper .content {
+	 padding-top: 2rem;
+	 padding-right: calc(25% + 15px);
+}
+ .wrapper:before {
+	 content: '';
+	 position: absolute;
+	 top: 50px;
+	 left: 75%;
+	 height: 100%;
+	 width: 30%;
+	 background-color: #fff;
+	 z-index: -1;
+	 box-shadow: 0px 20px 10px rgba(0, 0, 0, 0.3);
+}
+ .wrapper:hover .inner-circle {
+	 width: 7.5rem;
+	 height: 7.5rem;
+	 font-size: 55px;
+}
+      </style>
+      
    </body>
 </html>
